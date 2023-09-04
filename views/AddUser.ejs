@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/card.css">
+</head>
+<body>
+    <div class="CTA_btn">
+        <a href="/add-users" class="unvisited_link">Add User</a>
+    </div>
+    <% if (prods.length >0) { %>
+    <div class="user-grid">
+        <% for(let users of prods) { %>
+        <div class="user-card">
+            <h3><%= users.userName %></h3>
+            <p>Email: user1@example.com</p>
+            <p>Age: 30</p>
+            <div class="action-buttons">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
+        <% } %>
+    </div>
+
+    <% } else { %>
+
+        <h1>NO USER FOUND !!</h1>
+
+    <% } %>    
+</body>
+</html>
