@@ -1,17 +1,12 @@
 const express = require('express')
-const rootDir = require('../util/path')
-const adminData = require("./admin")
 
-const router = express.Router()
+const adminController = require("../controllers/admin")
+const userController = require("../controllers/user")
+
+const routes = express.Router()
 
 
-router.get('/',(req,res,next) => {
-    const users = adminData.users
-    res.render('AddUser',{
-        pageTitle:'Index Page',
-        prods:users,
-    })
-})
+routes.get('/',userController.getIndexPage)
 
-module.exports = router
+module.exports = routes
 

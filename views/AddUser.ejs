@@ -16,8 +16,11 @@
         <% for(let users of prods) { %>
         <div class="user-card">
             <h3><%= users.userName %></h3>
-            <p>Email: user1@example.com</p>
-            <p>Age: 30</p>
+            <p><%= users.userEmail %></p>
+            <p><%= users.dob %></p>
+            <p><%= users.gender %></p>
+            <p><%= users.country %></p>
+            <p><%= users.shortBio %></p>
             <div class="action-buttons">
                 <button>Edit</button>
                 <button>Delete</button>

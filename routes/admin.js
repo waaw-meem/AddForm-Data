@@ -1,20 +1,10 @@
 const express = require('express')
-
+const adminController = require("../controllers/admin")
 
 const routes = express.Router()
 
-const users = []
+routes.get('/add-users',adminController.getAddUser)
 
-routes.get('/add-users',(req,res,next) => {
-    res.render('userForm',{
-        pageTitle:'User Form'
-    })
-})
-
-routes.post('/users',(req,res,next) => {
-    users.push(({ userName: req.body.name }))
-    res.redirect('/')
-})
+routes.post('/users',adminController.postAddUser)
 
 exports.routes = routes;
-exports.users = users;
