@@ -3,6 +3,7 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const mongoose = require('mongoose')
 
 const app = express();
 
@@ -25,4 +26,10 @@ app.use((req, res, next) => {
     res.status(404).render('404', { pageTitle: 'Page Not Found' });
   });
 
-  app.listen(3000);
+  mongoose.connect('mongodb+srv://wm401238:upGYkpRunMtI5qry@cluster0.womdexk.mongodb.net/test?retryWrites=true&w=majority')
+  .then(result => {
+    app.listen(3000)
+  })
+  .catch(err => {
+    console.log(err)
+  })
