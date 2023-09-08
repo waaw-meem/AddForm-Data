@@ -33,15 +33,17 @@
             <option value="Canada">Canada</option>
             <option value="UK">UK</option>
             <!-- Add more options here -->
-        </select><br><br>
+        </select>
+        <br>
+        <br>
 
         <label for="bio">Short Bio:</label><br>
-        <textarea id="bio" name="bio" rows="4" cols="50" value="<% if (editing) { %><%= user.shortBio %><% } %>"></textarea><br><br>
+        <textarea id="bio" name="bio" rows="4" cols="50" value="<% if (editing) { %><%= user.shortBio %><% } %>"><% if (editing) { %><%= user.shortBio %><% } %></textarea><br><br>
 
         <% if (editing) { %>
-            <input type="hidden" value="<%= product._id %>" name="productId">
+            <input type="hidden" value="<%= user._id %>" name="productId">
         <% } %>
-       <button class="btn" type="submit"></button>><% if (editing) { %>Update User<% } else { %>Add User<% } %></button>
+       <button class="btn" type="submit"><% if (editing) { %>Update User<% } else { %>Add User<% } %></button>
     </form>
 </body>
 </html>

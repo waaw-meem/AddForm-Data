@@ -3,7 +3,7 @@ const User = require("../model/user")
 exports.getAddUser = (req,res,next) => {
     res.render('userForm',{
         pageTitle:'User Form',
-        editable:false
+        editing:false
     })
 }
 
@@ -43,7 +43,7 @@ exports.getEditUser = (req, res, next) => {
         }
         res.render('userForm',{
             pageTitle:'Edit User Form',
-            editable:editMode,
+            editing:editMode,
             user:user
         })
       })
@@ -52,10 +52,14 @@ exports.getEditUser = (req, res, next) => {
 
   exports.postEditUser = (req, res, next) => {
     const prodId = req.body.productId;
-    const updateduserName = req.body.userName;
-    const updateduserEmail = req.body.userEmail;
-    const updateduserBio = req.body.shortBio;
-  
+    const updateduserName = req.body.name;
+    const updateduserEmail = req.body.email;
+    const updateduserBio = req.body.bio;
+    console.log('prodId:', prodId);
+    console.log('updateduserName:', updateduserName);
+    console.log('updateduserEmail:', updateduserEmail);
+    console.log('updateduserBio:', updateduserBio);
+    
     User.findById(prodId)
       .then(user => {
         user.userName = updateduserName;
@@ -65,9 +69,7 @@ exports.getEditUser = (req, res, next) => {
       })
       .then(result => {
         console.log('UPDATED PRODUCT!');
-        res.redirect('/admin/products');
+        res.redirect('/');
       })
       .catch(err => console.log(err));
   };
-
-// exports.users = users;

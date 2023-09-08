@@ -9,6 +9,6 @@ routes.post('/users',adminController.postAddUser)
 
 routes.get('/edit-users/:productId',adminController.getEditUser)
 
-routes.post('/edit-users/:productId',adminController.postEditUser)
+routes.post('/edit-users',adminController.postEditUser)
 
 exports.routes = routes;

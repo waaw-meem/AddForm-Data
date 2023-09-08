@@ -1,5 +1,13 @@
 
 /* Grid Container */
+.action-buttons {
+    display: flex;
+    align-items: center;
+}
+
+a.btn {
+    text-decoration: none;
+}
 .user-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -40,7 +48,7 @@
     margin-top: 15px;
 }
 
-.user-card .action-buttons button {
+.user-card .action-buttons button,.btn {
     padding: 10px 20px;
     background-color: #007BFF;
     color: #fff;
@@ -50,7 +58,7 @@
     margin-right: 10px;
 }
 
-.user-card .action-buttons button:hover {
+.user-card .action-buttons button:hover,.btn:hover {
     background-color: #0056b3;
 }
     .CTA_btn {
@@ -67,5 +75,17 @@
         text-transform: uppercase;
         
     }
+
+    .card__actions {
+        padding: 1rem;
+        text-align: center;
+      }
+      
+      .card__actions button,
+      .card__actions a {
+        margin: 0 0.25rem;
+      }
+      
+
 
 
